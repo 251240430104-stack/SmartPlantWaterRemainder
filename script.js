@@ -38,10 +38,9 @@ function saveReminder() {
 
     if (delay > 0) {
         setTimeout(() => {
-            //alarm.play();
                 alert("🌱 Time to water " + plant + " 💧");
-            }
         }, delay);
+
     }
 
     document.getElementById("plant").value = "";
@@ -61,5 +60,6 @@ function showTime() {
 }
 
 setInterval(showTime, 1000);
+
 
 
