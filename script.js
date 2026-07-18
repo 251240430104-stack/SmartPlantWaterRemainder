@@ -1,6 +1,7 @@
 // Notification Permission
 if ("Notification" in window) {
     Notification.requestPermission();
+    const alarm = new Audio("alarm.mp3");
 }
 
 function saveReminder() {
@@ -37,11 +38,7 @@ function saveReminder() {
 
     if (delay > 0) {
         setTimeout(() => {
-            if (Notification.permission === "granted") {
-                new Notification("🌱 Water Reminder", {
-                    body: "Time to water " + plant + " 💧"
-                });
-            } else {
+            alarm.play();
                 alert("🌱 Time to water " + plant + " 💧");
             }
         }, delay);
@@ -64,3 +61,4 @@ function showTime() {
 }
 
 setInterval(showTime, 1000);
+
